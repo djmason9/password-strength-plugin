@@ -1,7 +1,7 @@
 /**
  * ORIGINAL PLUGIN
  * password_strength_plugin.js
- * Copyright (c) 20010 myPocket technologies (www.mypocket-technologies.com)
+ * Copyright (c) 2010 bitcows (www.bitcows.com)
 
  * Amended by Benjamin Charity /// https://github.com/benjamincharity/password-strength-plugin /// http://benjamincharity.com
  * Added if statement to enable value updates rather than re-injecting the html each time. This allows for smooth transitions.
@@ -41,11 +41,11 @@
 */
 
 (function($){
-  $.fn.shortPass = 'Danny DeVito';
-  $.fn.badPass = 'Bubble Boy';
-  $.fn.goodPass = 'Sylvester Stallone';
-  $.fn.strongPass = 'Dolph Lundgren meets the White Power Ranger';
-  $.fn.samePassword = 'Your email is not a good password.';
+  $.fn.shortPass = 'Very Weak';
+  $.fn.badPass = 'Weak';
+  $.fn.goodPass = 'Pretty Good';
+  $.fn.strongPass = 'Strong';
+  $.fn.samePassword = 'User name can not match password.';
   $.fn.resultStyle = "";
 
    $.fn.passStrength = function(options) {
@@ -79,7 +79,7 @@
             } else {
               // if it doesn't exist, create it
               $(this).next("." + opts.baseStyle).remove();
-              $(this).after("<span class=\""+opts.baseStyle+"\"><strong>Protection level:</strong><span></span></span>");
+              $(this).after("<span class=\""+opts.baseStyle+"\"><span></span></span>");
               $(this).next("." + opts.baseStyle).removeClass().addClass('testresult ' + $(this).resultStyle).find("span").text(results);
             }
 
